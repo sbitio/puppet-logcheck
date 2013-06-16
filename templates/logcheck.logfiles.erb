@@ -1,0 +1,7 @@
+# MANAGED BY PUPPET!
+
+# these files will be checked by logcheck
+# This has been tuned towards a default syslog install
+<% scope.lookupvar('logcheck::params::logfiles_real').each do |logfile| -%>
+<%= logfile %>
+<% end -%>
