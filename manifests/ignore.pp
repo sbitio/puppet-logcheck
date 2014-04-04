@@ -21,7 +21,7 @@ define logcheck::ignore (
   }
 
   file { $file :
-    ensure  => $logcheck::ensure,
+    ensure  => $ensure,
     owner   => $logcheck::params::user,
     group   => $logcheck::params::group,
     content     => "$rule\n",
