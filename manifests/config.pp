@@ -28,7 +28,7 @@ class logcheck::config () {
     $defaults
   )
 
-  Logcheck::Ignore <| tag == $::fqdn |>
+  Logcheck::Ignore <| |>
   Logcheck::Ignore <<| tag == $::fqdn |>>
 
 }
