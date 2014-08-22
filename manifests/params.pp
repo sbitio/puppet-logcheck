@@ -4,22 +4,26 @@ class logcheck::params (
   $logfiles    = [],
 ) {
 
+  $package_name     = 'logcheck'
+  $config_file      = '/etc/logcheck/logcheck.conf'
+  $logfiles_file    = '/etc/logcheck/logcheck.logfiles'
+  $dbs_dir          = '/etc/logcheck'
+  $user             = 'root'
+  $group            = 'logcheck'
+
   case $::operatingsystem {
     ubuntu, debian: {
-      $package_name     = 'logcheck'
-      $config_file      = '/etc/logcheck/logcheck.conf'
-      $logfiles_file    = '/etc/logcheck/logcheck.logfiles'
-      $dbs_dir          = '/etc/logcheck'
-      $user             = 'root'
-      $group            = 'logcheck'
       $logfiles_default = [
         '/var/log/syslog',
         '/var/log/auth.log',
       ]
     }
-#    redhat, centos: {
-#      $package_name    = 'logcheck'
-#    }
+    redhat, centos: {
+      $logfiles_default = [
+        '/var/log/messages',
+        '/var/log/secure',
+      ]
+    }
     default: {
       fail("Unsupported platform: ${::operatingsystem}")
     }
@@ -36,6 +40,5 @@ class logcheck::params (
   else {
     $logfiles_real = $logfiles
   }
-
 
 }
