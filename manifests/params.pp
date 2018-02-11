@@ -4,7 +4,7 @@ class logcheck::params (
   $logfiles    = [],
 ) {
 
-  $package_name     = 'logcheck'
+  $package_name     = ['logcheck', 'logcheck-database']
   $config_file      = '/etc/logcheck/logcheck.conf'
   $logfiles_file    = '/etc/logcheck/logcheck.logfiles'
   $dbs_dir          = '/etc/logcheck'
