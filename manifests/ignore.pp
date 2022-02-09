@@ -16,7 +16,7 @@ define logcheck::ignore (
       $file = "/etc/logcheck/${type}.ignore.d/${filename}"
     }
     default: {
-      fail "Uknown type $type for logcheck::ignore"
+      fail "Uknown type ${type} for logcheck::ignore"
     }
   }
 
@@ -24,7 +24,7 @@ define logcheck::ignore (
     ensure  => $ensure,
     owner   => $logcheck::params::user,
     group   => $logcheck::params::group,
-    content     => "$rule\n",
+    content => "${rule}\n",
     mode    => '0640',
   }
 }
