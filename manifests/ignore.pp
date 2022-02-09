@@ -1,3 +1,7 @@
+# logcheck::ignore
+#
+# This class handles the module data
+#
 define logcheck::ignore (
   $rule,
   $ensure   = $logcheck::ensure,

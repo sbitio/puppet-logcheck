@@ -1,3 +1,7 @@
+# logcheck
+#
+# This class is responsible for installing and configuring the logcheck service
+#
 class logcheck (
   $ensure      = present,
   $autoupgrade = true
