@@ -1,3 +1,7 @@
+# logcheck::config
+#
+# This class handles the config files for the logcheck service
+#
 class logcheck::config () {
   require logcheck::params
   require logcheck::install

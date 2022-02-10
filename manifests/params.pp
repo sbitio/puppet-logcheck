@@ -1,3 +1,7 @@
+# logcheck::params
+#
+# This class handles the module data
+#
 class logcheck::params (
   $reportlevel = 'server',
   $sendmailto  = 'logcheck',

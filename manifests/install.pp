@@ -1,3 +1,7 @@
+# logcheck::install
+#
+# This class is responsible for installing the logcheck package
+#
 class logcheck::install () {
 
   require logcheck::params
